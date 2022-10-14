@@ -1590,6 +1590,6 @@ k8s 의 접근제어 라고 이해 하면 됨.
 
 <br/>
 
-edu30 namespace 의 아무 pod에서 devops 네임스페이스의  webservice 서비스를₩ 80 포트로 호출한다.
+edu30 namespace 의 아무 pod에서 devops 네임스페이스의  webservice 서비스를 80 포트로 호출한다.
 
 <br/>
