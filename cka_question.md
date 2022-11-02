@@ -30,7 +30,7 @@
 > Question : Create a new namespace and create a pod in the namespace 
 
 > TASK :  
->  - namespace name : edu30  
+>  - namespace name : 본인 namespace
 >  - pod name : eshop-main 
 >  - image : ghcr.io/shclub/nginx:1.14 
 >  - env : DB=mysql 
@@ -1549,7 +1549,7 @@ root@newedu:~# cat /tmp/nginx.svc
 Server:    172.30.0.10
 Address 1: 172.30.0.10 dns-default.openshift-dns.svc.cluster.local
 
-Name:      nginx-resolver-service.edu30.svc.cluster.local
+Name:      nginx-resolver-service.svc.cluster.local
 Address 1: 172.30.127.12 nginx-resolver-service.edu30.svc.cluster.local
 root@newedu:~# cat /tmp/nginx.pod
 Server:    172.30.0.10
