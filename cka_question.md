@@ -32,7 +32,7 @@
 > TASK :  
 >  - namespace name : edu30  
 >  - pod name : eshop-main 
->  - image : nginx:1.17 
+>  - image : ghcr.io/shclub/nginx:1.17 
 >  - env : DB=mysql 
 
 
