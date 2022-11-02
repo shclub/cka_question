@@ -247,7 +247,7 @@ root@newedu:~# kubectl logs eshop-cart-app -c sidecar
 
 <br/><br/>
 
-아래 yaml 화일을 실행하여 deployment 를 생성합니다.  
+아래 명령을 실행하여 deployment 를 생성합니다.  
 - root@newedu:~# kubectl create deployment eshop-order --image=ghcr.io/shclub/nginx --replicas=1 
 
 <br/>
