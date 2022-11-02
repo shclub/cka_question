@@ -95,7 +95,9 @@ Master Node 의 POD 들도 Static POD 이고 kubelet 에 의해서 기동된다.
 > Question : Create Pod 
 
 > TASK :  
->  - Create a pod name multi-con with 3 containers running : nginx, redis.memcached  
+>  - Create a pod name multi-con with 3 containers running : nginx, redis, memcached  
+> docker image : ghcr.io/shclub/nginx, ghcr.io/shclub/redis, ghcr.io/shclub/memcached  
+
 
 <br/><br/>
 
@@ -246,7 +248,7 @@ root@newedu:~# kubectl logs eshop-cart-app -c sidecar
 <br/><br/>
 
 아래 yaml 화일을 실행하여 deployment 를 생성합니다.  
-- root@newedu:~# kubectl create deployment eshop-order --image=nginx --replicas=1 
+- root@newedu:~# kubectl create deployment eshop-order --image=ghcr.io/shclub/nginx --replicas=1 
 
 <br/>
 
@@ -286,7 +288,7 @@ eshop-order-ff866c56b-q9gd2         1/1     Running   0          14s
 >  - `2` replicas
 >  - label : `app_env_stage=dev`
 >  - container name : `webserver`
->  - container image : `nginx:1.14`  
+>  - container image : `ghcr.io/shclub/nginx:1.14`  
 
 
 >  Scale Out Deployment.  
@@ -295,7 +297,7 @@ eshop-order-ff866c56b-q9gd2         1/1     Running   0          14s
 <br/><br/>
 
 아래 yaml 화일을 실행하여 deployment 를 생성합니다.  
-- root@newedu:~# kubectl create deployment webserver --image=nginx:1.14 --replicas=2 -l app_env_stage=dev
+- root@newedu:~# kubectl create deployment webserver --image=ghcr.io/shclub/nginx:1.14 --replicas=2 -l app_env_stage=dev
 
 <br/>
 
@@ -336,10 +338,10 @@ webserver-5586594bbf-vpf5j          1/1     Running   0          7s
 
 > TASK :  
 >  - name : `nginx-app`  
->  - Using container nginx with version : `nginx:1.14-alpine`
+>  - Using container nginx with version : `ghcr.io/shclub/nginx:1.14-alpine`
 >  - The deployment should contain `3` replicas
->  Next, deploy the application with new version `nginx:1.14.2-alpine`, by performing a rolling update   
->  Finally, rollback that update to the previous version `nginx:1.14-alpine`
+>  Next, deploy the application with new version `ghcr.io/shclub/nginx:1.14.2-alpine`, by performing a rolling update   
+>  Finally, rollback that update to the previous version `ghcr.io/shclub/nginx:1.14-alpine`
 
 <br/><br/>
 
@@ -367,7 +369,7 @@ REVISION  CHANGE-CAUSE
 
 > TASK :  
 >  - name : `eshop-store`  
->  - image : `nginx`
+>  - image : `ghcr.io/shclub/nginx`
 >  - Node Selector :  `disktype=ssd`  
 
 <br/><br/>
@@ -777,7 +779,7 @@ metadata:
   name: web-pod
 spec:
   containers:
-  - image: busybox:1.28
+  - image: ghcr.io/shclub/busybox:1.28
     name: main
     command: ['sh','-c','if [ !-f /home/data.txt ];then exit 1;else sleep 300;fi']
     volumeMounts:
